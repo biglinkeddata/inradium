@@ -28,7 +28,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-semibold mb-6 leading-tight">
             From Data to{" "}
             <span className="text-primary">Intelligence</span>
           </h1>
