@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/inradium-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,9 +32,11 @@ const Navigation = () => {
       }`}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          <div className="text-2xl font-bold tracking-tight">
-            Inradium
-          </div>
+          <img 
+            src={logo} 
+            alt="Inradium" 
+            className="h-12 w-auto"
+          />
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
