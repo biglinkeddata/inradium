@@ -53,7 +53,7 @@ export default {
       },
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',
-        'gradient-light': 'var(--gradient-light)',
+        'gradient-dark': 'var(--gradient-dark)',
       },
       borderRadius: {
         lg: "var(--radius)",
