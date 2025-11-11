@@ -42,31 +42,31 @@ const Navigation = () => {
           <div className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection("home")}
-              className="text-foreground/80 hover:text-foreground transition-colors"
+              className="text-foreground/80 hover:text-primary transition-all"
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className="text-foreground/80 hover:text-foreground transition-colors"
+              className="text-foreground/80 hover:text-primary transition-all"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className="text-foreground/80 hover:text-foreground transition-colors"
+              className="text-foreground/80 hover:text-primary transition-all"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-foreground/80 hover:text-foreground transition-colors"
+              className="text-foreground/80 hover:text-primary transition-all"
             >
               Contact
             </button>
             <Button
               onClick={() => scrollToSection("contact")}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              variant="secondary"
             >
               Get Started
             </Button>
@@ -87,31 +87,32 @@ const Navigation = () => {
             <div className="flex flex-col gap-4">
               <button
                 onClick={() => scrollToSection("home")}
-                className="text-foreground/80 hover:text-foreground transition-colors text-left"
+                className="text-foreground/80 hover:text-primary transition-all text-left"
               >
                 Home
               </button>
               <button
                 onClick={() => scrollToSection("services")}
-                className="text-foreground/80 hover:text-foreground transition-colors text-left"
+                className="text-foreground/80 hover:text-primary transition-all text-left"
               >
                 Services
               </button>
               <button
                 onClick={() => scrollToSection("about")}
-                className="text-foreground/80 hover:text-foreground transition-colors text-left"
+                className="text-foreground/80 hover:text-primary transition-all text-left"
               >
                 About
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="text-foreground/80 hover:text-foreground transition-colors text-left"
+                className="text-foreground/80 hover:text-primary transition-all text-left"
               >
                 Contact
               </button>
               <Button
                 onClick={() => scrollToSection("contact")}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground w-full"
+                variant="secondary"
+                className="w-full"
               >
                 Get Started
               </Button>

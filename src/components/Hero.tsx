@@ -39,15 +39,15 @@ const Hero = () => {
             <Button
               onClick={() => scrollToSection("services")}
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6"
+              className="text-lg px-8 py-6"
             >
               Explore Our Solutions
             </Button>
             <Button
               onClick={() => scrollToSection("contact")}
               size="lg"
-              variant="outline"
-              className="border-primary text-primary hover:bg-primary/10 text-lg px-8 py-6"
+              variant="secondary"
+              className="text-lg px-8 py-6"
             >
               Contact Us
             </Button>
