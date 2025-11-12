@@ -44,6 +44,14 @@ All colors MUST be HSL.
     --gradient-dark: linear-gradient(180deg, hsl(220 30% 5%), hsl(220 25% 8%));
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Typography settings optimized for Manrope */
+    --letter-spacing-tight: -0.02em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.015em;
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.7;
   }
 
   .dark {
@@ -84,5 +92,16 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-weight: 400;
+    letter-spacing: var(--letter-spacing-normal);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: var(--letter-spacing-tight);
+    line-height: var(--line-height-tight);
+  }
+
+  p {
+    line-height: var(--line-height-relaxed);
   }
 }

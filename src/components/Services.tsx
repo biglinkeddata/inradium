@@ -57,8 +57,8 @@ const Services = () => {
     <section id="services" className="py-24 bg-card">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Solutions</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Our Solutions</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-normal" style={{ lineHeight: '1.6' }}>
             Comprehensive technology solutions designed to transform your data ecosystem
           </p>
         </div>
@@ -73,15 +73,15 @@ const Services = () => {
                 <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
                   <service.icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <h3 className="text-2xl font-bold mb-4 tracking-tight">{service.title}</h3>
+                <p className="text-muted-foreground mb-6 font-normal" style={{ lineHeight: '1.7' }}>
                   {service.description}
                 </p>
                 <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <span className="text-primary mt-1">•</span>
-                      <span className="text-foreground/80">{feature}</span>
+                      <span className="text-foreground/80 font-medium">{feature}</span>
                     </li>
                   ))}
                 </ul>

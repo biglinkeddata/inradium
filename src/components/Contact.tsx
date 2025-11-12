@@ -33,8 +33,8 @@ const Contact = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h2>
-            <p className="text-xl text-muted-foreground">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Get In Touch</h2>
+            <p className="text-xl text-muted-foreground font-normal" style={{ lineHeight: '1.6' }}>
               Ready to transform your data into intelligence? Let's talk.
             </p>
           </div>
@@ -113,7 +113,7 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
+                <h3 className="text-2xl font-bold mb-6 tracking-tight">Contact Information</h3>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -162,8 +162,8 @@ const Contact = () => {
               </div>
 
               <div className="p-6 bg-background rounded-lg border border-border">
-                <h4 className="font-semibold mb-3">Office Hours</h4>
-                <div className="space-y-2 text-sm text-muted-foreground">
+                <h4 className="font-bold mb-3 tracking-tight">Office Hours</h4>
+                <div className="space-y-2 text-sm text-muted-foreground font-medium">
                   <div className="flex justify-between">
                     <span>Monday - Friday</span>
                     <span>9:00 AM - 6:00 PM</span>
