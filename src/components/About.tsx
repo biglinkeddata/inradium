@@ -1,3 +1,5 @@
+import AnimatedCounter from "@/components/AnimatedCounter";
+
 const About = () => {
   return (
     <section id="about" className="py-24 bg-background">
@@ -23,15 +25,27 @@ const About = () => {
 
             <div className="grid md:grid-cols-3 gap-8 mt-12 pt-12 border-t border-border">
               <div className="text-center">
-                <div className="text-4xl font-extrabold text-primary mb-2 tracking-tight">10+</div>
+                <AnimatedCounter
+                  end={10}
+                  suffix="+"
+                  className="text-4xl font-extrabold text-primary mb-2 tracking-tight"
+                />
                 <div className="text-muted-foreground font-medium">Years Combined Expertise</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-extrabold text-primary mb-2 tracking-tight">50+</div>
+                <AnimatedCounter
+                  end={50}
+                  suffix="+"
+                  className="text-4xl font-extrabold text-primary mb-2 tracking-tight"
+                />
                 <div className="text-muted-foreground font-medium">Projects Delivered</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-extrabold text-primary mb-2 tracking-tight">100%</div>
+                <AnimatedCounter
+                  end={100}
+                  suffix="%"
+                  className="text-4xl font-extrabold text-primary mb-2 tracking-tight"
+                />
                 <div className="text-muted-foreground font-medium">Client Satisfaction</div>
               </div>
             </div>
