@@ -4,10 +4,12 @@ import Services from "@/components/Services";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import ScrollProgress from "@/components/ScrollProgress";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <ScrollProgress />
       <Navigation />
       <Hero />
       <Services />
