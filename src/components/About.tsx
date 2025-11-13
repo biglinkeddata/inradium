@@ -2,14 +2,14 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-background">
+    <section id="about" className="py-24 bg-section-accent text-section-accent-foreground transition-colors duration-500">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center tracking-tight text-section-accent-foreground">
             About Inradium
           </h2>
           
-          <div className="space-y-6 text-lg text-foreground/90 font-normal" style={{ lineHeight: '1.7' }}>
+          <div className="space-y-6 text-lg text-section-accent-foreground/90 font-normal" style={{ lineHeight: '1.7' }}>
             <p>
               Inradium is a technology company at the forefront of artificial intelligence,
               knowledge graphs, and intelligent data solutions. We partner with organizations
@@ -23,14 +23,14 @@ const About = () => {
               evolve with your business, ensuring sustainable value creation.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-8 mt-12 pt-12 border-t border-border">
+            <div className="grid md:grid-cols-3 gap-8 mt-12 pt-12 border-t border-section-accent-foreground/20">
               <div className="text-center">
                 <AnimatedCounter
                   end={10}
                   suffix="+"
                   className="text-4xl font-extrabold text-primary mb-2 tracking-tight"
                 />
-                <div className="text-muted-foreground font-medium">Years Combined Expertise</div>
+                <div className="text-section-accent-foreground/70 font-medium">Years Combined Expertise</div>
               </div>
               <div className="text-center">
                 <AnimatedCounter
@@ -38,7 +38,7 @@ const About = () => {
                   suffix="+"
                   className="text-4xl font-extrabold text-primary mb-2 tracking-tight"
                 />
-                <div className="text-muted-foreground font-medium">Projects Delivered</div>
+                <div className="text-section-accent-foreground/70 font-medium">Projects Delivered</div>
               </div>
               <div className="text-center">
                 <AnimatedCounter
@@ -46,14 +46,14 @@ const About = () => {
                   suffix="%"
                   className="text-4xl font-extrabold text-primary mb-2 tracking-tight"
                 />
-                <div className="text-muted-foreground font-medium">Client Satisfaction</div>
+                <div className="text-section-accent-foreground/70 font-medium">Client Satisfaction</div>
               </div>
             </div>
           </div>
 
-          <div className="mt-16 p-8 bg-card rounded-lg border border-border">
-            <h3 className="text-2xl font-bold mb-4 tracking-tight">Our Philosophy</h3>
-            <ul className="space-y-4 text-foreground/80 font-normal" style={{ lineHeight: '1.6' }}>
+          <div className="mt-16 p-8 bg-white rounded-lg border border-section-accent-foreground/10">
+            <h3 className="text-2xl font-bold mb-4 tracking-tight text-section-accent-foreground">Our Philosophy</h3>
+            <ul className="space-y-4 text-section-accent-foreground/80 font-normal" style={{ lineHeight: '1.6' }}>
               <li className="flex items-start gap-3">
                 <span className="text-primary text-xl">→</span>
                 <span>Start with the problem, not the technology</span>

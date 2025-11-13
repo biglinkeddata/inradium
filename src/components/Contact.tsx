@@ -29,12 +29,12 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-card">
+    <section id="contact" className="py-24 bg-section-medium text-section-medium-foreground transition-colors duration-500">
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Get In Touch</h2>
-            <p className="text-xl text-muted-foreground font-normal" style={{ lineHeight: '1.6' }}>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-section-medium-foreground">Get In Touch</h2>
+            <p className="text-xl text-section-medium-foreground/70 font-normal" style={{ lineHeight: '1.6' }}>
               Ready to transform your data into intelligence? Let's talk.
             </p>
           </div>
@@ -44,7 +44,7 @@ const Contact = () => {
             <div>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium mb-2 text-section-medium-foreground">
                     Name
                   </label>
                   <Input
@@ -54,11 +54,11 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="Your name"
                     required
-                    className="bg-background border-border"
+                    className="bg-white border-section-medium-foreground/20 text-section-medium-foreground"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium mb-2 text-section-medium-foreground">
                     Email
                   </label>
                   <Input
@@ -69,11 +69,11 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="your@email.com"
                     required
-                    className="bg-background border-border"
+                    className="bg-white border-section-medium-foreground/20 text-section-medium-foreground"
                   />
                 </div>
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium mb-2">
+                  <label htmlFor="company" className="block text-sm font-medium mb-2 text-section-medium-foreground">
                     Company
                   </label>
                   <Input
@@ -82,11 +82,11 @@ const Contact = () => {
                     value={formData.company}
                     onChange={handleChange}
                     placeholder="Your company"
-                    className="bg-background border-border"
+                    className="bg-white border-section-medium-foreground/20 text-section-medium-foreground"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-section-medium-foreground">
                     Message
                   </label>
                   <Textarea
@@ -97,7 +97,7 @@ const Contact = () => {
                     placeholder="Tell us about your project..."
                     rows={5}
                     required
-                    className="bg-background border-border"
+                    className="bg-white border-section-medium-foreground/20 text-section-medium-foreground"
                   />
                 </div>
                 <Button
@@ -113,17 +113,17 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold mb-6 tracking-tight">Contact Information</h3>
+                <h3 className="text-2xl font-bold mb-6 tracking-tight text-section-medium-foreground">Contact Information</h3>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <Mail className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <div className="font-medium mb-1">Email</div>
+                      <div className="font-medium mb-1 text-section-medium-foreground">Email</div>
                       <a
                         href="mailto:info@inradium.com"
-                        className="text-muted-foreground hover:text-primary transition-colors"
+                        className="text-section-medium-foreground/70 hover:text-primary transition-colors"
                       >
                         info@inradium.com
                       </a>
@@ -135,10 +135,10 @@ const Contact = () => {
                       <Phone className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <div className="font-medium mb-1">Phone</div>
+                      <div className="font-medium mb-1 text-section-medium-foreground">Phone</div>
                       <a
                         href="tel:+1234567890"
-                        className="text-muted-foreground hover:text-primary transition-colors"
+                        className="text-section-medium-foreground/70 hover:text-primary transition-colors"
                       >
                         +1 (234) 567-890
                       </a>
@@ -150,8 +150,8 @@ const Contact = () => {
                       <MapPin className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <div className="font-medium mb-1">Location</div>
-                      <div className="text-muted-foreground">
+                      <div className="font-medium mb-1 text-section-medium-foreground">Location</div>
+                      <div className="text-section-medium-foreground/70">
                         Global Operations
                         <br />
                         Remote First
@@ -161,9 +161,9 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="p-6 bg-background rounded-lg border border-border">
-                <h4 className="font-bold mb-3 tracking-tight">Office Hours</h4>
-                <div className="space-y-2 text-sm text-muted-foreground font-medium">
+              <div className="p-6 bg-white rounded-lg border border-section-medium-foreground/10">
+                <h4 className="font-bold mb-3 tracking-tight text-section-medium-foreground">Office Hours</h4>
+                <div className="space-y-2 text-sm text-section-medium-foreground/70 font-medium">
                   <div className="flex justify-between">
                     <span>Monday - Friday</span>
                     <span>9:00 AM - 6:00 PM</span>

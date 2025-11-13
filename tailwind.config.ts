@@ -50,6 +50,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        section: {
+          light: "hsl(var(--section-light))",
+          "light-foreground": "hsl(var(--section-light-foreground))",
+          medium: "hsl(var(--section-medium))",
+          "medium-foreground": "hsl(var(--section-medium-foreground))",
+          accent: "hsl(var(--section-accent))",
+          "accent-foreground": "hsl(var(--section-accent-foreground))",
+        },
       },
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',

@@ -38,6 +38,14 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
+    /* Section background colors */
+    --section-light: 40 20% 92%;
+    --section-light-foreground: 220 30% 15%;
+    --section-medium: 35 25% 85%;
+    --section-medium-foreground: 220 30% 15%;
+    --section-accent: 217 45% 90%;
+    --section-accent-foreground: 220 30% 15%;
+
     --gradient-primary: linear-gradient(135deg, hsl(217 52% 64%), hsl(217 60% 70%));
     --gradient-secondary: linear-gradient(135deg, hsl(37 48% 58%), hsl(30 60% 65%));
     --gradient-accent: linear-gradient(135deg, hsl(217 52% 64%), hsl(37 48% 58%));
@@ -94,6 +102,14 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
     font-weight: 400;
     letter-spacing: var(--letter-spacing-normal);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  section {
+    scroll-margin-top: 5rem;
   }
 
   h1, h2, h3, h4, h5, h6 {
