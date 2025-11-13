@@ -54,11 +54,11 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-24 bg-card">
+    <section id="services" className="py-24 bg-section-light text-section-light-foreground transition-colors duration-500">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Our Solutions</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-normal" style={{ lineHeight: '1.6' }}>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-section-light-foreground">Our Solutions</h2>
+          <p className="text-xl text-section-light-foreground/70 max-w-2xl mx-auto font-normal" style={{ lineHeight: '1.6' }}>
             Comprehensive technology solutions designed to transform your data ecosystem
           </p>
         </div>
@@ -67,23 +67,23 @@ const Services = () => {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="bg-background border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
+              className="bg-white border-section-light-foreground/10 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
             >
               <CardContent className="p-8">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <service.icon className="w-7 h-7 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold tracking-tight">{service.title}</h3>
+                  <h3 className="text-2xl font-bold tracking-tight text-section-light-foreground">{service.title}</h3>
                 </div>
-                <p className="text-muted-foreground mb-6 font-normal" style={{ lineHeight: '1.7' }}>
+                <p className="text-section-light-foreground/70 mb-6 font-normal" style={{ lineHeight: '1.7' }}>
                   {service.description}
                 </p>
                 <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <span className="text-primary mt-1">•</span>
-                      <span className="text-foreground/80 font-medium">{feature}</span>
+                      <span className="text-section-light-foreground/80 font-medium">{feature}</span>
                     </li>
                   ))}
                 </ul>
