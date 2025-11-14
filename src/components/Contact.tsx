@@ -128,13 +128,15 @@ const Contact = () => {
                   )}
                 />
                 
-                <Button
-                  type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                  size="lg"
-                >
-                  Send Message
-                </Button>
+                <div className="flex justify-end">
+                  <Button
+                    type="submit"
+                    variant="outline"
+                    className="border-section-medium-foreground/30 text-section-medium-foreground hover:bg-section-medium-foreground/10 hover:border-section-medium-foreground/50"
+                  >
+                    Send Message
+                  </Button>
+                </div>
               </form>
             </Form>
           </div>
