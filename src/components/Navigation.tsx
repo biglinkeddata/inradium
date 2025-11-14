@@ -24,7 +24,16 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <>
+      {/* Mobile Menu Backdrop */}
+      <div 
+        className={`fixed inset-0 bg-background/80 backdrop-blur-sm z-40 md:hidden transition-all duration-300 ${
+          isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+        onClick={() => setIsOpen(false)}
+      />
+      
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isOpen
           ? "bg-background backdrop-blur-md border-b border-border"
           : isScrolled 
@@ -117,6 +126,7 @@ const Navigation = () => {
         </div>
       </div>
     </nav>
+    </>
   );
 };
 
