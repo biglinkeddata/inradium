@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/inradium-logo.png";
 
@@ -66,12 +65,6 @@ const Navigation = () => {
             >
               Contact
             </button>
-            <Button
-              onClick={() => scrollToSection("contact")}
-              variant="secondary"
-            >
-              Get Started
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -111,13 +104,6 @@ const Navigation = () => {
               >
                 Contact
               </button>
-              <Button
-                onClick={() => scrollToSection("contact")}
-                variant="secondary"
-                className="w-full"
-              >
-                Get Started
-              </Button>
             </div>
           </div>
         )}
