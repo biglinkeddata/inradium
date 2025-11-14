@@ -56,14 +56,14 @@ const Hero = () => {
         }}
       >
         <div className="max-w-4xl">
-          <h1 className="text-5xl md:text-7xl mb-6 tracking-tight">
+          <h1 className="text-5xl md:text-7xl mb-6 tracking-tight animate-fade-in-left">
             From Data to{" "}
             <span className="text-primary">Intelligence</span>
           </h1>
-          <p className="text-xl md:text-2xl text-foreground/90 mb-12 font-normal tracking-wide" style={{ lineHeight: '1.6' }}>
+          <p className="text-xl md:text-2xl text-foreground/90 mb-12 font-normal tracking-wide animate-fade-in-left" style={{ lineHeight: '1.6', animationDelay: '0.2s', animationFillMode: 'both' }}>
             Transforming complex data into actionable insights through AI, Knowledge Graphs, and Intelligent Data solutions
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-start">
+          <div className="flex flex-col sm:flex-row gap-4 justify-start animate-fade-in-left" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
             <Button
               onClick={() => scrollToSection("services")}
               size="lg"
