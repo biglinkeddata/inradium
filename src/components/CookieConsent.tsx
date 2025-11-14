@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
-import { X } from "lucide-react";
+import CookieSettings from "./CookieSettings";
 
 const CookieConsent = () => {
   const [showConsent, setShowConsent] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
 
   useEffect(() => {
     const consent = localStorage.getItem("cookie-consent");
@@ -13,12 +14,32 @@ const CookieConsent = () => {
   }, []);
 
   const handleAccept = () => {
+    const allAccepted = {
+      necessary: true,
+      analytics: true,
+      marketing: true,
+    };
+    localStorage.setItem("cookie-preferences", JSON.stringify(allAccepted));
     localStorage.setItem("cookie-consent", "accepted");
     setShowConsent(false);
   };
 
   const handleDecline = () => {
+    const onlyNecessary = {
+      necessary: true,
+      analytics: false,
+      marketing: false,
+    };
+    localStorage.setItem("cookie-preferences", JSON.stringify(onlyNecessary));
     localStorage.setItem("cookie-consent", "declined");
+    setShowConsent(false);
+  };
+
+  const handleSettings = () => {
+    setShowSettings(true);
+  };
+
+  const handleSavePreferences = () => {
     setShowConsent(false);
   };
 
@@ -40,6 +61,14 @@ const CookieConsent = () => {
           </div>
           <div className="flex items-center gap-2 flex-shrink-0">
             <Button
+              onClick={handleSettings}
+              variant="ghost"
+              size="sm"
+              className="whitespace-nowrap"
+            >
+              Settings
+            </Button>
+            <Button
               onClick={handleDecline}
               variant="outline"
               size="sm"
@@ -52,11 +81,17 @@ const CookieConsent = () => {
               size="sm"
               className="whitespace-nowrap"
             >
-              Accept
+              Accept All
             </Button>
           </div>
         </div>
       </div>
+
+      <CookieSettings
+        open={showSettings}
+        onOpenChange={setShowSettings}
+        onSave={handleSavePreferences}
+      />
     </div>
   );
 };
