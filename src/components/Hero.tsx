@@ -14,6 +14,11 @@ const Hero = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Calculate parallax values
+  const videoParallax = scrollY * 0.6; // Video moves faster
+  const contentParallax = scrollY * 0.3; // Content moves slower
+  const opacity = Math.max(1 - scrollY / 600, 0); // Fade out content
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -23,7 +28,7 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
+      {/* Video Background with Parallax */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
           autoPlay
@@ -32,8 +37,8 @@ const Hero = () => {
           playsInline
           className="w-full h-full object-cover opacity-30"
           style={{
-            transform: `translateY(${scrollY * 0.5}px)`,
-            transition: "transform 0.1s ease-out",
+            transform: `translateY(${videoParallax}px) scale(${1 + scrollY / 2000})`,
+            willChange: "transform",
           }}
         >
           <source src="/videos/hero-background.mp4" type="video/mp4" />
@@ -41,8 +46,15 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-dark opacity-0"></div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center">
+      {/* Content with Parallax */}
+      <div
+        className="relative z-10 container mx-auto px-6 text-center"
+        style={{
+          transform: `translateY(-${contentParallax}px)`,
+          opacity: opacity,
+          willChange: "transform, opacity",
+        }}
+      >
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
             From Data to{" "}
