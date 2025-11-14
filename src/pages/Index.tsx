@@ -24,9 +24,7 @@ const Index = () => {
       <ScrollReveal animation="slide-up" delay={100}>
         <Contact />
       </ScrollReveal>
-      <ScrollReveal animation="fade-in">
-        <Footer />
-      </ScrollReveal>
+      <Footer />
     </div>
   );
 };
