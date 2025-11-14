@@ -8,6 +8,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import SectionIndicator from "@/components/SectionIndicator";
 import ScrollReveal from "@/components/ScrollReveal";
 import CookieConsent from "@/components/CookieConsent";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 
 const Index = () => {
@@ -15,6 +16,7 @@ const Index = () => {
   
   return (
     <div className="min-h-screen">
+      <GoogleAnalytics />
       <ScrollProgress />
       <SectionIndicator />
       <Navigation />
