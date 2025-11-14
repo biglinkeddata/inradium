@@ -33,11 +33,17 @@ const Navigation = () => {
       }`}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          <img 
-            src={logo} 
-            alt="Inradium" 
-            className="h-12 w-auto"
-          />
+          <button
+            onClick={() => scrollToSection("home")}
+            className="cursor-pointer"
+            aria-label="Go to homepage"
+          >
+            <img 
+              src={logo} 
+              alt="Inradium" 
+              className="h-12 w-auto"
+            />
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
