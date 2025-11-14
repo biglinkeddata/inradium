@@ -48,22 +48,22 @@ const Hero = () => {
 
       {/* Content with Parallax */}
       <div
-        className="relative z-10 container mx-auto px-6 text-center"
+        className="relative z-10 container mx-auto px-6 text-left"
         style={{
           transform: `translateY(-${contentParallax}px)`,
           opacity: opacity,
           willChange: "transform, opacity",
         }}
       >
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+        <div className="max-w-4xl">
+          <h1 className="text-5xl md:text-7xl mb-6 tracking-tight">
             From Data to{" "}
             <span className="text-primary">Intelligence</span>
           </h1>
           <p className="text-xl md:text-2xl text-foreground/90 mb-12 font-normal tracking-wide" style={{ lineHeight: '1.6' }}>
             Transforming complex data into actionable insights through AI, Knowledge Graphs, and Intelligent Data solutions
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <Button
               onClick={() => scrollToSection("services")}
               size="lg"
