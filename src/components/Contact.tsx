@@ -39,146 +39,73 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2 text-section-medium-foreground">
-                    Name
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Your name"
-                    required
-                    className="bg-white border-section-medium-foreground/20 text-section-medium-foreground"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2 text-section-medium-foreground">
-                    Email
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="your@email.com"
-                    required
-                    className="bg-white border-section-medium-foreground/20 text-section-medium-foreground"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium mb-2 text-section-medium-foreground">
-                    Company
-                  </label>
-                  <Input
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    placeholder="Your company"
-                    className="bg-white border-section-medium-foreground/20 text-section-medium-foreground"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-section-medium-foreground">
-                    Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Tell us about your project..."
-                    rows={5}
-                    required
-                    className="bg-white border-section-medium-foreground/20 text-section-medium-foreground"
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                  size="lg"
-                >
-                  Send Message
-                </Button>
-              </form>
-            </div>
-
-            {/* Contact Information */}
-            <div className="space-y-8">
+          <div className="max-w-2xl mx-auto">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <h3 className="text-2xl font-bold mb-6 tracking-tight text-section-medium-foreground">Contact Information</h3>
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="font-medium mb-1 text-section-medium-foreground">Email</div>
-                      <a
-                        href="mailto:info@inradium.com"
-                        className="text-section-medium-foreground/70 hover:text-primary transition-colors"
-                      >
-                        info@inradium.com
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="font-medium mb-1 text-section-medium-foreground">Phone</div>
-                      <a
-                        href="tel:+1234567890"
-                        className="text-section-medium-foreground/70 hover:text-primary transition-colors"
-                      >
-                        +1 (234) 567-890
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="font-medium mb-1 text-section-medium-foreground">Location</div>
-                      <div className="text-section-medium-foreground/70">
-                        Global Operations
-                        <br />
-                        Remote First
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <label htmlFor="name" className="block text-sm font-medium mb-2 text-section-medium-foreground">
+                  Name
+                </label>
+                <Input
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Your name"
+                  required
+                  className="bg-white border-section-medium-foreground/20 text-section-medium-foreground"
+                />
               </div>
-
-              <div className="p-6 bg-white rounded-lg border border-section-medium-foreground/10">
-                <h4 className="font-bold mb-3 tracking-tight text-section-medium-foreground">Office Hours</h4>
-                <div className="space-y-2 text-sm text-section-medium-foreground/70 font-medium">
-                  <div className="flex justify-between">
-                    <span>Monday - Friday</span>
-                    <span>9:00 AM - 6:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Saturday</span>
-                    <span>10:00 AM - 2:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Sunday</span>
-                    <span>Closed</span>
-                  </div>
-                </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium mb-2 text-section-medium-foreground">
+                  Email
+                </label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="your@email.com"
+                  required
+                  className="bg-white border-section-medium-foreground/20 text-section-medium-foreground"
+                />
               </div>
-            </div>
+              <div>
+                <label htmlFor="company" className="block text-sm font-medium mb-2 text-section-medium-foreground">
+                  Company
+                </label>
+                <Input
+                  id="company"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  placeholder="Your company"
+                  className="bg-white border-section-medium-foreground/20 text-section-medium-foreground"
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium mb-2 text-section-medium-foreground">
+                  Message
+                </label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Tell us about your project..."
+                  rows={5}
+                  required
+                  className="bg-white border-section-medium-foreground/20 text-section-medium-foreground"
+                />
+              </div>
+              <Button
+                type="submit"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                size="lg"
+              >
+                Send Message
+              </Button>
+            </form>
           </div>
         </div>
       </div>
