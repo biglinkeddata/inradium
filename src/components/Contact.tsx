@@ -5,6 +5,8 @@ import { toast } from "sonner";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import ReCAPTCHA from "react-google-recaptcha";
+import { useRef, useState } from "react";
 import {
   Form,
   FormControl,
@@ -24,6 +26,9 @@ const contactSchema = z.object({
 type ContactFormData = z.infer<typeof contactSchema>;
 
 const Contact = () => {
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -35,18 +40,28 @@ const Contact = () => {
   });
 
   const onSubmit = async (data: ContactFormData) => {
+    if (!recaptchaToken) {
+      toast.error("Please complete the reCAPTCHA verification.");
+      return;
+    }
+
     try {
       const response = await fetch("https://formspree.io/f/myzlkvar", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          "g-recaptcha-response": recaptchaToken,
+        }),
       });
 
       if (response.ok) {
         toast.success("Message sent! We'll get back to you soon.");
         form.reset();
+        recaptchaRef.current?.reset();
+        setRecaptchaToken(null);
       } else {
         toast.error("Failed to send message. Please try again.");
       }
@@ -54,6 +69,10 @@ const Contact = () => {
       console.error("Form submission error:", error);
       toast.error("Failed to send message. Please try again.");
     }
+  };
+
+  const handleRecaptchaChange = (token: string | null) => {
+    setRecaptchaToken(token);
   };
 
   return (
@@ -144,14 +163,24 @@ const Contact = () => {
                   )}
                 />
                 
-                <div className="flex justify-start">
-                  <Button
-                    type="submit"
-                    variant="outline"
-                    className="border-primary text-primary hover:bg-primary/10 hover:border-primary"
-                  >
-                    Send Message
-                  </Button>
+                <div className="space-y-4">
+                  <ReCAPTCHA
+                    ref={recaptchaRef}
+                    sitekey="YOUR_RECAPTCHA_SITE_KEY"
+                    onChange={handleRecaptchaChange}
+                    theme="light"
+                  />
+                  
+                  <div className="flex justify-start">
+                    <Button
+                      type="submit"
+                      variant="outline"
+                      className="border-primary text-primary hover:bg-primary/10 hover:border-primary"
+                      disabled={!recaptchaToken}
+                    >
+                      Send Message
+                    </Button>
+                  </div>
                 </div>
               </form>
             </Form>
