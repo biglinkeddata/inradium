@@ -70,9 +70,21 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-foreground"
+            className="md:hidden text-foreground relative w-6 h-6"
+            aria-label="Toggle menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            <Menu 
+              size={24} 
+              className={`absolute inset-0 transition-all duration-300 ${
+                isOpen ? 'rotate-90 opacity-0' : 'rotate-0 opacity-100'
+              }`}
+            />
+            <X 
+              size={24} 
+              className={`absolute inset-0 transition-all duration-300 ${
+                isOpen ? 'rotate-0 opacity-100' : '-rotate-90 opacity-0'
+              }`}
+            />
           </button>
         </div>
 
