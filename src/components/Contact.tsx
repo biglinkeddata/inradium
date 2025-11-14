@@ -128,11 +128,11 @@ const Contact = () => {
                   )}
                 />
                 
-                <div className="flex justify-end">
+                <div className="flex justify-start">
                   <Button
                     type="submit"
                     variant="outline"
-                    className="border-section-medium-foreground/30 text-section-medium-foreground hover:bg-section-medium-foreground/10 hover:border-section-medium-foreground/50"
+                    className="border-primary text-primary hover:bg-primary/10 hover:border-primary"
                   >
                     Send Message
                   </Button>
