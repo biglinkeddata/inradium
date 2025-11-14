@@ -50,15 +50,15 @@ const SectionIndicator = () => {
           className="group relative flex items-center justify-end"
           aria-label={`Go to ${label}`}
         >
-          <span className="absolute right-6 px-2 py-1 bg-card text-foreground text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+          <span className="absolute right-6 px-3 py-1.5 bg-background/95 backdrop-blur-sm text-foreground text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-lg border border-border/50">
             {label}
           </span>
           <div
             className={cn(
-              "w-2 h-2 rounded-full border-2 border-foreground/40 transition-all duration-300",
+              "w-3 h-3 rounded-full border-2 transition-all duration-300 shadow-lg",
               activeSection === id
-                ? "bg-primary border-primary scale-150"
-                : "bg-transparent hover:scale-125 hover:border-foreground/60"
+                ? "bg-primary border-primary scale-150 shadow-primary/50"
+                : "bg-background border-primary/60 hover:scale-125 hover:border-primary hover:bg-primary/20"
             )}
           />
         </button>
