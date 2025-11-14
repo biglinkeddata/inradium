@@ -75,7 +75,7 @@ const Hero = () => {
             <Button
               onClick={() => scrollToSection("contact")}
               size="lg"
-              variant="outline"
+              variant="outline-secondary"
               className="text-lg px-8 py-6"
             >
               Contact Us
