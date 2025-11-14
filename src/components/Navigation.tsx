@@ -87,28 +87,28 @@ const Navigation = () => {
           <div className="flex flex-col gap-4 py-4">
             <button
               onClick={() => scrollToSection("home")}
-              className="text-foreground/80 hover:text-primary transition-all text-right animate-fade-in"
+              className="text-foreground/80 hover:text-primary transition-all text-center animate-fade-in"
               style={{ animationDelay: "50ms" }}
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className="text-foreground/80 hover:text-primary transition-all text-right animate-fade-in"
+              className="text-foreground/80 hover:text-primary transition-all text-center animate-fade-in"
               style={{ animationDelay: "100ms" }}
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className="text-foreground/80 hover:text-primary transition-all text-right animate-fade-in"
+              className="text-foreground/80 hover:text-primary transition-all text-center animate-fade-in"
               style={{ animationDelay: "150ms" }}
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-foreground/80 hover:text-primary transition-all text-right animate-fade-in"
+              className="text-foreground/80 hover:text-primary transition-all text-center animate-fade-in"
               style={{ animationDelay: "200ms" }}
             >
               Contact
