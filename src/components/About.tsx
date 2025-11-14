@@ -106,9 +106,14 @@ const About = () => {
           </div>
 
           <ScrollReveal animation="slide-up" delay={100} threshold={0.3}>
-            <div className="mt-16 p-8 bg-white rounded-lg border border-section-accent-foreground/10">
-              <h3 className="text-2xl font-bold mb-4 tracking-tight text-section-accent-foreground">Our Philosophy</h3>
-              <ul className="space-y-4 text-section-accent-foreground/80 font-normal" style={{ lineHeight: '1.6' }}>
+            <div className="mt-16 relative group">
+              {/* Animated glow effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-primary rounded-lg blur-lg opacity-0 group-hover:opacity-75 transition-all duration-500 group-hover:duration-300 animate-pulse" />
+              
+              {/* Card content */}
+              <div className="relative p-8 bg-white rounded-lg border border-section-accent-foreground/10">
+                <h3 className="text-2xl font-bold mb-4 tracking-tight text-section-accent-foreground">Our Philosophy</h3>
+                <ul className="space-y-4 text-section-accent-foreground/80 font-normal" style={{ lineHeight: '1.6' }}>
                 <ScrollReveal animation="slide-left" delay={200} threshold={0.3}>
                   <li className="flex items-start gap-3">
                     <span className="text-primary text-xl">→</span>
@@ -133,7 +138,8 @@ const About = () => {
                     <span>Deliver measurable impact, not just implementations</span>
                   </li>
                 </ScrollReveal>
-              </ul>
+                </ul>
+              </div>
             </div>
           </ScrollReveal>
         </div>
