@@ -6,6 +6,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import SectionIndicator from "@/components/SectionIndicator";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const Index = () => {
   return (
@@ -14,10 +15,18 @@ const Index = () => {
       <SectionIndicator />
       <Navigation />
       <Hero />
-      <Services />
-      <About />
-      <Contact />
-      <Footer />
+      <ScrollReveal animation="slide-up">
+        <Services />
+      </ScrollReveal>
+      <ScrollReveal animation="slide-up" delay={100}>
+        <About />
+      </ScrollReveal>
+      <ScrollReveal animation="slide-up" delay={100}>
+        <Contact />
+      </ScrollReveal>
+      <ScrollReveal animation="fade-in">
+        <Footer />
+      </ScrollReveal>
     </div>
   );
 };
