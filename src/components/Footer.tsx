@@ -52,7 +52,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors flex items-center gap-2">
+                <a href="https://www.linkedin.com/company/inradium" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-2">
                   <Linkedin size={16} />
                   <span>LinkedIn</span>
                 </a>
