@@ -1,15 +1,15 @@
 import ScrollReveal from "./ScrollReveal";
 
 const clients = [
-  { name: "ELLIPTIC", url: "https://www.elliptic.co" },
-  { name: "PULSAR", url: "https://www.pulsarplatform.com/" },
-  { name: "VUELIO", url: "https://www.vuelio.com/uk/" },
-  { name: "ISENTIA", url: "https://www.isentia.com/" },
+  { name: "Elliptic", url: "https://www.elliptic.co", logo: "/images/clients/elliptic-logo.png" },
+  { name: "Pulsar", url: "https://www.pulsarplatform.com/", logo: "/images/clients/pulsar-logo.png" },
+  { name: "Vuelio", url: "https://www.vuelio.com/uk/", logo: "/images/clients/vuelio-logo.png" },
+  { name: "Isentia", url: "https://www.isentia.com/", logo: "/images/clients/isentia-logo.png" },
 ];
 
 const Clients = () => {
   return (
-    <section id="clients" className="py-20 bg-section-light dark:bg-section-dark">
+    <section id="clients" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <ScrollReveal animation="fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
@@ -31,11 +31,13 @@ const Clients = () => {
                 href={client.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center p-6 rounded-lg transition-all duration-300 hover:bg-accent/50"
+                className="group flex items-center justify-center p-8 rounded-lg transition-all duration-300"
               >
-                <span className="text-2xl md:text-3xl font-bold text-muted-foreground/60 group-hover:text-foreground transition-colors duration-300 tracking-wide">
-                  {client.name}
-                </span>
+                <img
+                  src={client.logo}
+                  alt={`${client.name} logo`}
+                  className="h-12 md:h-16 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                />
               </a>
             </ScrollReveal>
           ))}
