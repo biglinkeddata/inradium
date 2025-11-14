@@ -76,10 +76,10 @@ const Footer = () => {
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-muted-foreground text-sm">
           <p>© {currentYear} Inradium. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link to="/privacy-policy" className="hover:text-primary transition-colors">
+            <Link to="/privacy-policy" className="hover:text-primary transition-colors hover-scale">
               Privacy Policy
             </Link>
-            <Link to="/terms-of-service" className="hover:text-primary transition-colors">
+            <Link to="/terms-of-service" className="hover:text-primary transition-colors hover-scale">
               Terms of Service
             </Link>
           </div>
