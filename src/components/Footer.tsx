@@ -8,16 +8,16 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">Inradium</h3>
-            <p className="text-muted-foreground max-w-md">
+            <h3 className="text-lg font-bold mb-4">Inradium</h3>
+            <p className="text-muted-foreground text-sm max-w-md">
               Transforming complex data into actionable insights through AI,
               Knowledge Graphs, and Intelligent Data solutions.
             </p>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-muted-foreground">
+            <h4 className="font-semibold text-sm mb-4">Quick Links</h4>
+            <ul className="space-y-2 text-muted-foreground text-sm">
               <li>
                 <a href="#home" className="hover:text-primary transition-colors">
                   Home
@@ -42,8 +42,8 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Connect</h4>
-            <ul className="space-y-2 text-muted-foreground">
+            <h4 className="font-semibold text-sm mb-4">Connect</h4>
+            <ul className="space-y-2 text-muted-foreground text-sm">
               <li>
                 <a href="mailto:info@inradium.com" className="hover:text-primary transition-colors">
                   Email
@@ -63,7 +63,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-muted-foreground">
+        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-muted-foreground text-sm">
           <p>© {currentYear} Inradium. All rights reserved.</p>
           <div className="flex gap-6">
             <Link to="/privacy-policy" className="hover:text-primary transition-colors">
