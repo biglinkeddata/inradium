@@ -67,6 +67,7 @@ const Hero = () => {
             <Button
               onClick={() => scrollToSection("services")}
               size="lg"
+              variant="outline"
               className="text-lg px-8 py-6"
             >
               Explore Our Solutions
@@ -74,7 +75,7 @@ const Hero = () => {
             <Button
               onClick={() => scrollToSection("contact")}
               size="lg"
-              variant="secondary"
+              variant="outline"
               className="text-lg px-8 py-6"
             >
               Contact Us
