@@ -13,6 +13,8 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import Parallax from "@/components/Parallax";
+import { useEffect, useState } from "react";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -24,6 +26,17 @@ const contactSchema = z.object({
 type ContactFormData = z.infer<typeof contactSchema>;
 
 const Contact = () => {
+  const [scrollY, setScrollY] = useState(0);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -41,14 +54,28 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-section-medium text-section-medium-foreground transition-colors duration-500">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-24 bg-section-medium text-section-medium-foreground transition-colors duration-500 relative overflow-hidden">
+      {/* Decorative parallax elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <Parallax speed={0.25}>
+          <div className="absolute top-10 right-20 w-64 h-64 rounded-full bg-primary/5 blur-3xl" />
+        </Parallax>
+        <Parallax speed={-0.15}>
+          <div className="absolute bottom-10 left-20 w-80 h-80 rounded-full bg-secondary/5 blur-3xl" />
+        </Parallax>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-section-medium-foreground">Get In Touch</h2>
-            <p className="text-xl text-section-medium-foreground/70 font-normal" style={{ lineHeight: '1.6' }}>
-              Ready to transform your data into intelligence? Let's talk.
-            </p>
+            <Parallax speed={0.2}>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-section-medium-foreground">Get In Touch</h2>
+            </Parallax>
+            <Parallax speed={0.15} opacity>
+              <p className="text-xl text-section-medium-foreground/70 font-normal" style={{ lineHeight: '1.6' }}>
+                Ready to transform your data into intelligence? Let's talk.
+              </p>
+            </Parallax>
           </div>
 
           <div className="max-w-2xl mx-auto">

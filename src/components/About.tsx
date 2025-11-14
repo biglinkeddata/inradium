@@ -1,5 +1,6 @@
 import AnimatedCounter from "@/components/AnimatedCounter";
 import ScrollReveal from "@/components/ScrollReveal";
+import Parallax from "@/components/Parallax";
 import { useEffect, useState } from "react";
 import { Award, Rocket, Star } from "lucide-react";
 
@@ -19,34 +20,24 @@ const About = () => {
     <section id="about" className="py-24 bg-section-accent text-section-accent-foreground transition-colors duration-500 relative overflow-hidden">
       {/* Decorative floating elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div
-          className="absolute top-20 right-10 w-64 h-64 rounded-full bg-primary/5 blur-3xl"
-          style={{
-            transform: `translateY(${scrollY * 0.15}px)`,
-            transition: "transform 0.1s ease-out",
-          }}
-        />
-        <div
-          className="absolute bottom-32 left-10 w-96 h-96 rounded-full bg-secondary/5 blur-3xl"
-          style={{
-            transform: `translateY(${scrollY * -0.1}px)`,
-            transition: "transform 0.1s ease-out",
-          }}
-        />
-        <div
-          className="absolute top-1/2 left-1/3 w-48 h-48 rounded-full bg-primary/10 blur-2xl"
-          style={{
-            transform: `translate(${scrollY * 0.08}px, ${scrollY * -0.12}px)`,
-            transition: "transform 0.1s ease-out",
-          }}
-        />
+        <Parallax speed={0.3}>
+          <div className="absolute top-20 right-10 w-64 h-64 rounded-full bg-primary/5 blur-3xl" />
+        </Parallax>
+        <Parallax speed={-0.2}>
+          <div className="absolute bottom-32 left-10 w-96 h-96 rounded-full bg-secondary/5 blur-3xl" />
+        </Parallax>
+        <Parallax speed={0.25} direction="both">
+          <div className="absolute top-1/2 left-1/3 w-48 h-48 rounded-full bg-primary/10 blur-2xl" />
+        </Parallax>
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center tracking-tight text-section-accent-foreground">
-            About Inradium
-          </h2>
+          <Parallax speed={0.2}>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center tracking-tight text-section-accent-foreground">
+              About Inradium
+            </h2>
+          </Parallax>
           
           <div className="space-y-6 text-lg text-section-accent-foreground/90 font-normal" style={{ lineHeight: '1.7' }}>
             <p>

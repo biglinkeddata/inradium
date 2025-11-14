@@ -1,6 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Brain, Network, Database, TrendingUp } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import Parallax from "@/components/Parallax";
+import { useEffect, useState } from "react";
 
 const services = [
   {
@@ -54,14 +56,42 @@ const services = [
 ];
 
 const Services = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section id="services" className="py-24 bg-section-light text-section-light-foreground transition-colors duration-500">
-      <div className="container mx-auto px-6">
+    <section id="services" className="py-24 bg-section-light text-section-light-foreground transition-colors duration-500 relative overflow-hidden">
+      {/* Decorative parallax elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <Parallax speed={0.3}>
+          <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-primary/5 blur-3xl" />
+        </Parallax>
+        <Parallax speed={-0.2}>
+          <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-secondary/5 blur-3xl" />
+        </Parallax>
+        <Parallax speed={0.15} direction="both">
+          <div className="absolute top-1/2 right-1/4 w-48 h-48 rounded-full bg-primary/10 blur-2xl" />
+        </Parallax>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-section-light-foreground">Our Solutions</h2>
-          <p className="text-xl text-section-light-foreground/70 max-w-2xl mx-auto font-normal" style={{ lineHeight: '1.6' }}>
-            Comprehensive technology solutions designed to transform your data ecosystem
-          </p>
+          <Parallax speed={0.2}>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-section-light-foreground">Our Solutions</h2>
+          </Parallax>
+          <Parallax speed={0.15} opacity>
+            <p className="text-xl text-section-light-foreground/70 max-w-2xl mx-auto font-normal" style={{ lineHeight: '1.6' }}>
+              Comprehensive technology solutions designed to transform your data ecosystem
+            </p>
+          </Parallax>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
