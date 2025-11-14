@@ -104,10 +104,12 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
     font-weight: 400;
     letter-spacing: var(--letter-spacing-normal);
+    overflow-x: hidden;
   }
 
   html {
     scroll-behavior: auto;
+    overflow-x: hidden;
   }
 
   section {
