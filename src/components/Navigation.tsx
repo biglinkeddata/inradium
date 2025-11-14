@@ -1,6 +1,13 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import logo from "@/assets/inradium-logo.png";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -68,45 +75,45 @@ const Navigation = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-foreground"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild className="md:hidden">
+              <button className="text-foreground">
+                <Menu size={24} />
+              </button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[280px] sm:w-[320px]">
+              <SheetHeader className="mb-8">
+                <SheetTitle className="text-left">Menu</SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col gap-6">
+                <button
+                  onClick={() => scrollToSection("home")}
+                  className="text-lg text-foreground/80 hover:text-primary transition-all text-left py-2 border-b border-border/50 hover:border-primary/50"
+                >
+                  Home
+                </button>
+                <button
+                  onClick={() => scrollToSection("services")}
+                  className="text-lg text-foreground/80 hover:text-primary transition-all text-left py-2 border-b border-border/50 hover:border-primary/50"
+                >
+                  Services
+                </button>
+                <button
+                  onClick={() => scrollToSection("about")}
+                  className="text-lg text-foreground/80 hover:text-primary transition-all text-left py-2 border-b border-border/50 hover:border-primary/50"
+                >
+                  About
+                </button>
+                <button
+                  onClick={() => scrollToSection("contact")}
+                  className="text-lg text-foreground/80 hover:text-primary transition-all text-left py-2 border-b border-border/50 hover:border-primary/50"
+                >
+                  Contact
+                </button>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
-
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden py-4 border-t border-border">
-            <div className="flex flex-col gap-4">
-              <button
-                onClick={() => scrollToSection("home")}
-                className="text-foreground/80 hover:text-primary transition-all text-right"
-              >
-                Home
-              </button>
-              <button
-                onClick={() => scrollToSection("services")}
-                className="text-foreground/80 hover:text-primary transition-all text-right"
-              >
-                Services
-              </button>
-              <button
-                onClick={() => scrollToSection("about")}
-                className="text-foreground/80 hover:text-primary transition-all text-right"
-              >
-                About
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="text-foreground/80 hover:text-primary transition-all text-right"
-              >
-                Contact
-              </button>
-            </div>
-          </div>
-        )}
       </div>
     </nav>
   );
