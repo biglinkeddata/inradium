@@ -58,7 +58,7 @@ const SectionIndicator = () => {
               "w-3 h-3 rounded-full border transition-all duration-300 shadow-lg",
               activeSection === id
                 ? "bg-primary border-primary scale-150 shadow-primary/50"
-                : "bg-muted/50 border-muted hover:scale-125 hover:border-primary hover:bg-primary/20"
+                : "bg-muted/20 border-muted/30 hover:scale-125 hover:border-primary hover:bg-primary/20"
             )}
           />
         </button>
