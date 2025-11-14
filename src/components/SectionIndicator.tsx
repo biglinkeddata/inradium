@@ -10,23 +10,8 @@ const sections = [
 
 const SectionIndicator = () => {
   const [activeSection, setActiveSection] = useState("home");
-  const [isVisible, setIsVisible] = useState(true);
-  const scrollTimeoutRef = useState<NodeJS.Timeout | null>(null)[0];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsVisible(true);
-      if (scrollTimeoutRef) {
-        clearTimeout(scrollTimeoutRef);
-      }
-      const timeout = setTimeout(() => {
-        setIsVisible(false);
-      }, 2000);
-      Object.assign(scrollTimeoutRef, timeout);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -46,11 +31,7 @@ const SectionIndicator = () => {
       if (element) observer.observe(element);
     });
 
-    return () => {
-      observer.disconnect();
-      window.removeEventListener("scroll", handleScroll);
-      if (scrollTimeoutRef) clearTimeout(scrollTimeoutRef);
-    };
+    return () => observer.disconnect();
   }, []);
 
   const scrollToSection = (id: string) => {
@@ -61,10 +42,7 @@ const SectionIndicator = () => {
   };
 
   return (
-    <div className={cn(
-      "fixed right-6 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-3 transition-opacity duration-500",
-      isVisible ? "opacity-100" : "opacity-0"
-    )}>
+    <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-3">
       {sections.map(({ id, label }) => (
         <button
           key={id}
@@ -77,10 +55,10 @@ const SectionIndicator = () => {
           </span>
           <div
             className={cn(
-              "w-3 h-3 rounded-full border transition-all duration-300",
+              "w-3 h-3 rounded-full border transition-all duration-300 shadow-lg",
               activeSection === id
-                ? "bg-primary border-primary scale-150 shadow-[0_0_20px_rgba(var(--primary),0.6)]"
-                : "bg-muted/50 border-muted hover:scale-125 hover:border-primary hover:bg-primary/20 shadow-lg"
+                ? "bg-primary border-primary scale-150 shadow-primary/50"
+                : "bg-muted/50 border-muted hover:scale-125 hover:border-primary hover:bg-primary/20"
             )}
           />
         </button>
