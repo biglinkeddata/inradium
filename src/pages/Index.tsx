@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import Clients from "@/components/Clients";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -21,6 +22,7 @@ const Index = () => {
       <ScrollReveal animation="slide-up">
         <Services />
       </ScrollReveal>
+      <Clients />
       <ScrollReveal animation="slide-up" delay={100}>
         <About />
       </ScrollReveal>
