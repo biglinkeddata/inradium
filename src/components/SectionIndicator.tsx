@@ -55,10 +55,10 @@ const SectionIndicator = () => {
           </span>
           <div
             className={cn(
-              "w-3 h-3 rounded-full border transition-all duration-300 shadow-lg",
+              "w-3 h-3 rounded-full border transition-all duration-300 shadow-lg backdrop-blur-sm",
               activeSection === id
                 ? "bg-primary border-primary scale-150 shadow-primary/50"
-                : "bg-foreground/20 border-foreground/40 hover:scale-125 hover:border-primary hover:bg-primary/20"
+                : "bg-background/30 border-foreground/40 hover:scale-125 hover:border-primary hover:bg-primary/20"
             )}
           />
         </button>
