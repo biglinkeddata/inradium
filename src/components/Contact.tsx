@@ -34,10 +34,26 @@ const Contact = () => {
     },
   });
 
-  const onSubmit = (data: ContactFormData) => {
-    console.log("Form submitted:", data);
-    toast.success("Message sent! We'll get back to you soon.");
-    form.reset();
+  const onSubmit = async (data: ContactFormData) => {
+    try {
+      const response = await fetch("https://formspree.io/f/myzlkvar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        toast.success("Message sent! We'll get back to you soon.");
+        form.reset();
+      } else {
+        toast.error("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast.error("Failed to send message. Please try again.");
+    }
   };
 
   return (
