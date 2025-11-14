@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Linkedin, Twitter } from "lucide-react";
+import { Mail, Linkedin, X } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -58,9 +58,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors flex items-center gap-2">
-                  <Twitter size={16} />
-                  <span>Twitter</span>
+                <a href="https://x.com/inradium" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-2">
+                  <X size={16} />
+                  <span>X</span>
                 </a>
               </li>
             </ul>
