@@ -57,7 +57,7 @@ const SectionIndicator = () => {
             className={cn(
               "w-3 h-3 rounded-full border transition-all duration-300 shadow-lg",
               activeSection === id
-                ? "bg-primary border-primary scale-150 shadow-primary/50 animate-pulse"
+                ? "bg-primary border-primary scale-150 shadow-primary/50"
                 : "bg-background border-primary/50 hover:scale-125 hover:border-primary hover:bg-primary/20"
             )}
           />
