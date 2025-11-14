@@ -8,7 +8,15 @@ const BackToTop = () => {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 400) {
+      const scrolled = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      
+      // Show button after scrolling 400px
+      // Hide button when near footer (within 200px of bottom)
+      const nearBottom = scrolled + windowHeight >= documentHeight - 200;
+      
+      if (scrolled > 400 && !nearBottom) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -16,6 +24,7 @@ const BackToTop = () => {
     };
 
     window.addEventListener("scroll", toggleVisibility, { passive: true });
+    toggleVisibility(); // Check initial state
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
