@@ -77,36 +77,44 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden py-4 border-t border-border">
-            <div className="flex flex-col gap-4">
-              <button
-                onClick={() => scrollToSection("home")}
-                className="text-foreground/80 hover:text-primary transition-all text-right"
-              >
-                Home
-              </button>
-              <button
-                onClick={() => scrollToSection("services")}
-                className="text-foreground/80 hover:text-primary transition-all text-right"
-              >
-                Services
-              </button>
-              <button
-                onClick={() => scrollToSection("about")}
-                className="text-foreground/80 hover:text-primary transition-all text-right"
-              >
-                About
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="text-foreground/80 hover:text-primary transition-all text-right"
-              >
-                Contact
-              </button>
-            </div>
+        <div 
+          className={`md:hidden overflow-hidden border-t border-border transition-all duration-300 ease-in-out ${
+            isOpen 
+              ? "max-h-96 opacity-100" 
+              : "max-h-0 opacity-0 border-transparent"
+          }`}
+        >
+          <div className="flex flex-col gap-4 py-4">
+            <button
+              onClick={() => scrollToSection("home")}
+              className="text-foreground/80 hover:text-primary transition-all text-right animate-fade-in"
+              style={{ animationDelay: "50ms" }}
+            >
+              Home
+            </button>
+            <button
+              onClick={() => scrollToSection("services")}
+              className="text-foreground/80 hover:text-primary transition-all text-right animate-fade-in"
+              style={{ animationDelay: "100ms" }}
+            >
+              Services
+            </button>
+            <button
+              onClick={() => scrollToSection("about")}
+              className="text-foreground/80 hover:text-primary transition-all text-right animate-fade-in"
+              style={{ animationDelay: "150ms" }}
+            >
+              About
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="text-foreground/80 hover:text-primary transition-all text-right animate-fade-in"
+              style={{ animationDelay: "200ms" }}
+            >
+              Contact
+            </button>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
