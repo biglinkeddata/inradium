@@ -89,25 +89,25 @@ const Navigation = () => {
             <div className="flex flex-col gap-4">
               <button
                 onClick={() => scrollToSection("home")}
-                className="text-foreground/80 hover:text-primary transition-all text-left"
+                className="text-foreground/80 hover:text-primary transition-all text-right"
               >
                 Home
               </button>
               <button
                 onClick={() => scrollToSection("services")}
-                className="text-foreground/80 hover:text-primary transition-all text-left"
+                className="text-foreground/80 hover:text-primary transition-all text-right"
               >
                 Services
               </button>
               <button
                 onClick={() => scrollToSection("about")}
-                className="text-foreground/80 hover:text-primary transition-all text-left"
+                className="text-foreground/80 hover:text-primary transition-all text-right"
               >
                 About
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="text-foreground/80 hover:text-primary transition-all text-left"
+                className="text-foreground/80 hover:text-primary transition-all text-right"
               >
                 Contact
               </button>
