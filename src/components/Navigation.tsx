@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Home, Briefcase, Info, Mail } from "lucide-react";
 import logo from "@/assets/inradium-logo.png";
 
 const Navigation = () => {
@@ -82,27 +82,31 @@ const Navigation = () => {
             <div className="flex flex-col gap-4">
               <button
                 onClick={() => scrollToSection("home")}
-                className="text-foreground/80 hover:text-primary transition-all text-right"
+                className="text-foreground/80 hover:text-primary transition-all flex items-center justify-end gap-3"
               >
-                Home
+                <span>Home</span>
+                <Home size={20} />
               </button>
               <button
                 onClick={() => scrollToSection("services")}
-                className="text-foreground/80 hover:text-primary transition-all text-right"
+                className="text-foreground/80 hover:text-primary transition-all flex items-center justify-end gap-3"
               >
-                Services
+                <span>Services</span>
+                <Briefcase size={20} />
               </button>
               <button
                 onClick={() => scrollToSection("about")}
-                className="text-foreground/80 hover:text-primary transition-all text-right"
+                className="text-foreground/80 hover:text-primary transition-all flex items-center justify-end gap-3"
               >
-                About
+                <span>About</span>
+                <Info size={20} />
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="text-foreground/80 hover:text-primary transition-all text-right"
+                className="text-foreground/80 hover:text-primary transition-all flex items-center justify-end gap-3"
               >
-                Contact
+                <span>Contact</span>
+                <Mail size={20} />
               </button>
             </div>
           </div>
