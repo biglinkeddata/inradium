@@ -41,6 +41,8 @@ const CookieSettings = ({ open, onOpenChange, onSave }: CookieSettingsProps) => 
     localStorage.setItem("cookie-consent", "customized");
     onSave(preferences);
     onOpenChange(false);
+    // Reload to apply analytics changes
+    window.location.reload();
   };
 
   const handleAcceptAll = () => {
