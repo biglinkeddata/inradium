@@ -1,6 +1,7 @@
 import AnimatedCounter from "@/components/AnimatedCounter";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useEffect, useState } from "react";
+import { Award, Rocket, Star } from "lucide-react";
 
 const About = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -64,6 +65,9 @@ const About = () => {
             <div className="grid md:grid-cols-3 gap-8 mt-12 pt-12 border-t border-section-accent-foreground/20">
               <ScrollReveal animation="scale-in" delay={0} threshold={0.3}>
                 <div className="text-center">
+                  <div className="flex justify-center mb-3">
+                    <Award className="text-primary animate-pulse" size={40} strokeWidth={1.5} />
+                  </div>
                   <AnimatedCounter
                     end={10}
                     suffix="+"
@@ -74,6 +78,9 @@ const About = () => {
               </ScrollReveal>
               <ScrollReveal animation="scale-in" delay={150} threshold={0.3}>
                 <div className="text-center">
+                  <div className="flex justify-center mb-3">
+                    <Rocket className="text-primary animate-bounce" size={40} strokeWidth={1.5} />
+                  </div>
                   <AnimatedCounter
                     end={50}
                     suffix="+"
@@ -84,6 +91,9 @@ const About = () => {
               </ScrollReveal>
               <ScrollReveal animation="scale-in" delay={300} threshold={0.3}>
                 <div className="text-center">
+                  <div className="flex justify-center mb-3">
+                    <Star className="text-primary animate-pulse" size={40} strokeWidth={1.5} fill="currentColor" />
+                  </div>
                   <AnimatedCounter
                     end={100}
                     suffix="%"
