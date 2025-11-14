@@ -23,7 +23,7 @@ const visibleClasses = {
   "slide-up": "opacity-100 translate-y-0",
   "slide-left": "opacity-100 translate-x-0",
   "slide-right": "opacity-100 translate-x-0",
-  "scale-in": "",
+  "scale-in": "opacity-100 scale-100",
 };
 
 const ScrollReveal = ({
