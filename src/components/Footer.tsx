@@ -46,25 +46,25 @@ const Footer = () => {
             <h4 className="font-semibold text-sm mb-4">Connect</h4>
             <ul className="space-y-2 text-muted-foreground text-sm">
               <li>
-                <a href="mailto:info@inradium.com" className="hover:text-primary transition-colors flex items-center gap-2">
+                <a href="mailto:info@inradium.com" className="hover:text-primary transition-colors flex items-center gap-2 hover-scale">
                   <Mail size={16} />
                   <span>Email</span>
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/company/inradium" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-2">
+                <a href="https://www.linkedin.com/company/inradium" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-2 hover-scale">
                   <Linkedin size={16} />
                   <span>LinkedIn</span>
                 </a>
               </li>
               <li>
-                <a href="https://x.com/inradium" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-2">
+                <a href="https://x.com/inradium" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-2 hover-scale">
                   <X size={16} />
                   <span>X</span>
                 </a>
               </li>
               <li>
-                <a href="https://www.facebook.com/inradium/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-2">
+                <a href="https://www.facebook.com/inradium/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-2 hover-scale">
                   <Facebook size={16} />
                   <span>Facebook</span>
                 </a>
