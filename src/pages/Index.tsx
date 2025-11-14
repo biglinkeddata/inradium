@@ -7,14 +7,12 @@ import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import SectionIndicator from "@/components/SectionIndicator";
 import ScrollReveal from "@/components/ScrollReveal";
-import BackToTop from "@/components/BackToTop";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <ScrollProgress />
       <SectionIndicator />
-      <BackToTop />
       <Navigation />
       <Hero />
       <ScrollReveal animation="slide-up">
