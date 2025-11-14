@@ -7,8 +7,11 @@ import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import SectionIndicator from "@/components/SectionIndicator";
 import ScrollReveal from "@/components/ScrollReveal";
+import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 
 const Index = () => {
+  useSmoothScroll();
+  
   return (
     <div className="min-h-screen">
       <ScrollProgress />
