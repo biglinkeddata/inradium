@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import SectionIndicator from "@/components/SectionIndicator";
 import ScrollReveal from "@/components/ScrollReveal";
+import CookieConsent from "@/components/CookieConsent";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 
 const Index = () => {
@@ -28,6 +29,7 @@ const Index = () => {
         <Contact />
       </ScrollReveal>
       <Footer />
+      <CookieConsent />
     </div>
   );
 };
