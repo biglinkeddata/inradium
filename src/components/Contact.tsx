@@ -1,31 +1,43 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone } from "lucide-react";
 import { toast } from "sonner";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  company: z.string().trim().max(100, "Company name must be less than 100 characters").optional(),
+  message: z.string().trim().min(1, "Message is required").max(1000, "Message must be less than 1000 characters"),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    message: "",
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      company: "",
+      message: "",
+    },
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const onSubmit = (data: ContactFormData) => {
+    console.log("Form submitted:", data);
     toast.success("Message sent! We'll get back to you soon.");
-    setFormData({ name: "", email: "", company: "", message: "" });
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+    form.reset();
   };
 
   return (
@@ -40,72 +52,91 @@ const Contact = () => {
           </div>
 
           <div className="max-w-2xl mx-auto">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2 text-section-medium-foreground">
-                  Name
-                </label>
-                <Input
-                  id="name"
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <FormField
+                  control={form.control}
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Your name"
-                  required
-                  className="bg-white border-section-medium-foreground/20 text-section-medium-foreground"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-section-medium-foreground">Name *</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Your name"
+                          className="bg-white border-section-medium-foreground/20 text-section-medium-foreground"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2 text-section-medium-foreground">
-                  Email
-                </label>
-                <Input
-                  id="email"
+                
+                <FormField
+                  control={form.control}
                   name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="your@email.com"
-                  required
-                  className="bg-white border-section-medium-foreground/20 text-section-medium-foreground"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-section-medium-foreground">Email *</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="email"
+                          placeholder="your@email.com"
+                          className="bg-white border-section-medium-foreground/20 text-section-medium-foreground"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium mb-2 text-section-medium-foreground">
-                  Company
-                </label>
-                <Input
-                  id="company"
+                
+                <FormField
+                  control={form.control}
                   name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  placeholder="Your company"
-                  className="bg-white border-section-medium-foreground/20 text-section-medium-foreground"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-section-medium-foreground">Company</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Your company"
+                          className="bg-white border-section-medium-foreground/20 text-section-medium-foreground"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2 text-section-medium-foreground">
-                  Message
-                </label>
-                <Textarea
-                  id="message"
+                
+                <FormField
+                  control={form.control}
                   name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Tell us about your project..."
-                  rows={5}
-                  required
-                  className="bg-white border-section-medium-foreground/20 text-section-medium-foreground"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-section-medium-foreground">Message *</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Tell us about your project..."
+                          rows={5}
+                          className="bg-white border-section-medium-foreground/20 text-section-medium-foreground"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
-              <Button
-                type="submit"
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                size="lg"
-              >
-                Send Message
-              </Button>
-            </form>
+                
+                <Button
+                  type="submit"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                  size="lg"
+                >
+                  Send Message
+                </Button>
+              </form>
+            </Form>
           </div>
         </div>
       </div>
