@@ -55,8 +55,17 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-24 bg-section-light text-section-light-foreground transition-colors duration-500">
-      <div className="container mx-auto px-6">
+    <section id="services" className="relative py-24 bg-section-light text-section-light-foreground transition-colors duration-500 overflow-hidden">
+      {/* Animated Bubbles Background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-[float_8s_ease-in-out_infinite]" />
+        <div className="absolute top-40 right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-[float_10s_ease-in-out_infinite_2s]" />
+        <div className="absolute bottom-20 left-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-[float_12s_ease-in-out_infinite_4s]" />
+        <div className="absolute bottom-40 right-1/3 w-72 h-72 bg-primary/8 rounded-full blur-3xl animate-[float_9s_ease-in-out_infinite_1s]" />
+        <div className="absolute top-1/2 left-1/2 w-56 h-56 bg-primary/5 rounded-full blur-3xl animate-[float_11s_ease-in-out_infinite_3s]" />
+      </div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-section-light-foreground">Our Solutions</h2>
           <p className="text-xl text-section-light-foreground/70 max-w-2xl mx-auto font-normal" style={{ lineHeight: '1.6' }}>
