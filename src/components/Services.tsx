@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Brain, Network, Database, TrendingUp } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 
 const services = [
   {
@@ -64,7 +65,47 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* Mobile Carousel */}
+        <div className="md:hidden">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {services.map((service, index) => (
+                <CarouselItem key={index} className="pl-4 basis-[85%]">
+                  <Card className="bg-white border-section-light-foreground/10 h-full">
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <service.icon className="w-7 h-7 text-primary" />
+                        </div>
+                        <h3 className="text-2xl font-bold tracking-tight text-section-light-foreground">{service.title}</h3>
+                      </div>
+                      <p className="text-section-light-foreground/70 mb-6 font-normal" style={{ lineHeight: '1.7' }}>
+                        {service.description}
+                      </p>
+                      <ul className="space-y-2">
+                        {service.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start gap-2">
+                            <span className="text-primary mt-1">•</span>
+                            <span className="text-section-light-foreground/80 font-medium">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        </div>
+
+        {/* Desktop Grid */}
+        <div className="hidden md:grid md:grid-cols-2 gap-8">
           {services.map((service, index) => (
             <ScrollReveal
               key={index}
