@@ -1,6 +1,5 @@
 import AnimatedCounter from "@/components/AnimatedCounter";
 import ScrollReveal from "@/components/ScrollReveal";
-import ParticleBackground from "@/components/ParticleBackground";
 import { useEffect, useState } from "react";
 import { Award, Rocket, Star } from "lucide-react";
 
@@ -18,9 +17,6 @@ const About = () => {
 
   return (
     <section id="about" className="py-24 bg-section-accent text-section-accent-foreground transition-colors duration-500 relative overflow-hidden">
-      {/* Particle animation background */}
-      <ParticleBackground />
-      
       {/* Decorative floating elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div
