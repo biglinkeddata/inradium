@@ -1,7 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Brain, Network, Database, TrendingUp } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
+import { useState, useEffect } from "react";
 
 const services = [
   {
@@ -55,6 +56,19 @@ const services = [
 ];
 
 const Services = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
   return (
     <section id="services" className="py-24 bg-section-light text-section-light-foreground transition-colors duration-500">
       <div className="container mx-auto px-6">
@@ -72,6 +86,7 @@ const Services = () => {
               align: "start",
               loop: true,
             }}
+            setApi={setApi}
             className="w-full"
           >
             <CarouselContent className="-ml-4">
@@ -102,6 +117,22 @@ const Services = () => {
               ))}
             </CarouselContent>
           </Carousel>
+          
+          {/* Dot Indicators */}
+          <div className="flex justify-center gap-2 mt-6">
+            {services.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => api?.scrollTo(index)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  current === index 
+                    ? "w-8 bg-primary" 
+                    : "w-2 bg-section-light-foreground/20"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Desktop Grid */}
