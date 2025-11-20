@@ -92,7 +92,7 @@ const Services = () => {
             <CarouselContent className="-ml-4">
               {services.map((service, index) => (
                 <CarouselItem key={index} className="pl-4 basis-[85%]">
-                  <Card className="bg-white border-section-light-foreground/10 h-full">
+                  <Card className="bg-white border-section-light-foreground/10 h-full transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-primary/20 active:scale-[0.98]">
                     <CardContent className="p-6">
                       <div className="flex items-center gap-4 mb-6">
                         <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
