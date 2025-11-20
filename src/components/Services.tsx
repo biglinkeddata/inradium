@@ -98,7 +98,7 @@ const Services = () => {
                         <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                           <service.icon className="w-7 h-7 text-primary" />
                         </div>
-                        <h3 className="text-2xl font-bold tracking-tight text-section-light-foreground">{service.title}</h3>
+                        <h3 className="text-lg font-bold tracking-tight text-section-light-foreground leading-tight">{service.title}</h3>
                       </div>
                       <p className="text-section-light-foreground/70 mb-6 font-normal" style={{ lineHeight: '1.7' }}>
                         {service.description}
