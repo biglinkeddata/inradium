@@ -51,6 +51,49 @@ const ParticleBackground = () => {
         .getPropertyValue("--primary")
         .trim();
       
+      // Check for collisions between particles
+      for (let i = 0; i < particlesRef.current.length; i++) {
+        for (let j = i + 1; j < particlesRef.current.length; j++) {
+          const p1 = particlesRef.current[i];
+          const p2 = particlesRef.current[j];
+          
+          const dx = p2.x - p1.x;
+          const dy = p2.y - p1.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          const minDistance = p1.size + p2.size;
+          
+          // Collision detected
+          if (distance < minDistance) {
+            // Calculate collision angle
+            const angle = Math.atan2(dy, dx);
+            const sin = Math.sin(angle);
+            const cos = Math.cos(angle);
+            
+            // Rotate velocities
+            const vx1 = p1.speedX * cos + p1.speedY * sin;
+            const vy1 = p1.speedY * cos - p1.speedX * sin;
+            const vx2 = p2.speedX * cos + p2.speedY * sin;
+            const vy2 = p2.speedY * cos - p2.speedX * sin;
+            
+            // Swap velocities (elastic collision)
+            const temp = vx1;
+            p1.speedX = (vx2 * cos - vy1 * sin) * 0.95;
+            p1.speedY = (vy1 * cos + vx2 * sin) * 0.95;
+            p2.speedX = (temp * cos - vy2 * sin) * 0.95;
+            p2.speedY = (vy2 * cos + temp * sin) * 0.95;
+            
+            // Separate particles to avoid overlap
+            const overlap = minDistance - distance;
+            const separationX = (dx / distance) * overlap * 0.5;
+            const separationY = (dy / distance) * overlap * 0.5;
+            p1.x -= separationX;
+            p1.y -= separationY;
+            p2.x += separationX;
+            p2.y += separationY;
+          }
+        }
+      }
+      
       particlesRef.current.forEach((particle) => {
         // Update position
         particle.x += particle.speedX;
