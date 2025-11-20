@@ -36,8 +36,8 @@ const ParticleBackground = () => {
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       size: Math.random() * 6 + 1,
-      speedX: (Math.random() - 0.5) * 0.5,
-      speedY: (Math.random() - 0.5) * 0.5,
+      speedX: (Math.random() - 0.5) * 1.5,
+      speedY: (Math.random() - 0.5) * 1.5,
       opacity: Math.random() * 0.5 + 0.3,
       fadeDirection: Math.random() > 0.5 ? 1 : -1,
     }));
@@ -73,6 +73,29 @@ const ParticleBackground = () => {
         ctx.fillStyle = `hsl(${primaryColor} / ${particle.opacity})`;
         ctx.fill();
       });
+
+      // Draw connecting lines between nearby particles
+      const maxDistance = 120;
+      for (let i = 0; i < particlesRef.current.length; i++) {
+        for (let j = i + 1; j < particlesRef.current.length; j++) {
+          const p1 = particlesRef.current[i];
+          const p2 = particlesRef.current[j];
+          
+          const dx = p1.x - p2.x;
+          const dy = p1.y - p2.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < maxDistance) {
+            const opacity = (1 - distance / maxDistance) * 0.3 * Math.min(p1.opacity, p2.opacity);
+            ctx.beginPath();
+            ctx.strokeStyle = `hsl(${primaryColor} / ${opacity})`;
+            ctx.lineWidth = 1;
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.stroke();
+          }
+        }
+      }
 
       animationFrameRef.current = requestAnimationFrame(animate);
     };
