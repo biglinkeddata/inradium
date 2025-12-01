@@ -30,6 +30,23 @@ const TermsOfService = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
+        <title>Terms of Service - Inradium</title>
+        <meta name="description" content="Read Inradium's Terms of Service to understand the terms and conditions that govern your use of our AI technology and data intelligence services." />
+        <link rel="canonical" href="https://inradium.com/terms-of-service" />
+        
+        {/* OpenGraph Meta Tags */}
+        <meta property="og:title" content="Terms of Service - Inradium" />
+        <meta property="og:description" content="Read Inradium's Terms of Service to understand the terms and conditions that govern your use of our AI technology and data intelligence services." />
+        <meta property="og:url" content="https://inradium.com/terms-of-service" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/8KFj1HvFHKU9hZqoI4fIOgi6hJK2/social-images/social-1762886040964-inradium-logo-transparent.png" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Terms of Service - Inradium" />
+        <meta name="twitter:description" content="Read Inradium's Terms of Service to understand the terms and conditions that govern your use of our AI technology and data intelligence services." />
+        <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/8KFj1HvFHKU9hZqoI4fIOgi6hJK2/social-images/social-1762886040964-inradium-logo-transparent.png" />
+        
         <script type="application/ld+json">
           {JSON.stringify(breadcrumbSchema)}
         </script>
