@@ -30,6 +30,23 @@ const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
+        <title>Privacy Policy - Inradium</title>
+        <meta name="description" content="Read Inradium's Privacy Policy to understand how we collect, use, and protect your personal data when you visit our website and use our AI services." />
+        <link rel="canonical" href="https://inradium.com/privacy-policy" />
+        
+        {/* OpenGraph Meta Tags */}
+        <meta property="og:title" content="Privacy Policy - Inradium" />
+        <meta property="og:description" content="Read Inradium's Privacy Policy to understand how we collect, use, and protect your personal data when you visit our website and use our AI services." />
+        <meta property="og:url" content="https://inradium.com/privacy-policy" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/8KFj1HvFHKU9hZqoI4fIOgi6hJK2/social-images/social-1762886040964-inradium-logo-transparent.png" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Privacy Policy - Inradium" />
+        <meta name="twitter:description" content="Read Inradium's Privacy Policy to understand how we collect, use, and protect your personal data when you visit our website and use our AI services." />
+        <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/8KFj1HvFHKU9hZqoI4fIOgi6hJK2/social-images/social-1762886040964-inradium-logo-transparent.png" />
+        
         <script type="application/ld+json">
           {JSON.stringify(breadcrumbSchema)}
         </script>
