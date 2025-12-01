@@ -3,12 +3,37 @@ import Footer from "@/components/Footer";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet";
 
 const PrivacyPolicy = () => {
   const navigate = useNavigate();
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://inradium.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Privacy Policy",
+        "item": "https://inradium.com/privacy-policy"
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+      </Helmet>
       <Navigation />
       <main className="container mx-auto px-6 py-24">
         <div className="max-w-4xl mx-auto">
